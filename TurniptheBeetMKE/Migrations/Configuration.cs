@@ -17,31 +17,68 @@ namespace TurniptheBeetMKE.Migrations
 
         protected override void Seed(TurniptheBeetMKE.Models.ApplicationDbContext context)
         {
-            if (!context.Users.Any(u => u.UserName == "marketmanager00@gmail.com"))
-            {
-                RoleStore<IdentityRole> roleStore = new RoleStore<IdentityRole>(context);
-                RoleManager<IdentityRole> roleManager = new RoleManager<IdentityRole>(roleStore);
-                UserStore<ApplicationUser> userStore = new UserStore<ApplicationUser>(context);
-                UserManager<ApplicationUser> userManager = new ApplicationUserManager(userStore);
-                ApplicationUser Manager = new ApplicationUser { UserName = "marketmanager00@gmail.com" };
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
 
-                userManager.Create(Manager, password: "T3sting123!");
-                roleManager.Create(new IdentityRole { Name = "Manager" });
-                userManager.AddToRole(Manager.Id, "Manager");
+            // In Startup iam creating first Admin Role and creating a default Admin User    
+            if (!roleManager.RoleExists("Admin"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Admin";
+                roleManager.Create(role);
+
+                // Create an Admin super user who will maintain the website
+                var user = new ApplicationUser();
+                user.UserName = "Admin";
+                user.Email = "admin@turnipthebeetmke.com";
+
+                string userPassword = "T3sting123!";
+
+                var identityResult = UserManager.Create(user, userPassword);
+
+                //Add default User to Role Admin   
+                if (identityResult.Succeeded)
+                {
+                    var result1 = UserManager.AddToRole(user.Id, "Admin");
+                }
             }
 
-            //  This method will be called after migrating to the latest version.
+            // Create Manager role    
+            if (!roleManager.RoleExists("Manager"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Manager";
+                roleManager.Create(role);
+            }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            // Create Vendor role    
+            if (!roleManager.RoleExists("Vendor"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Vendor";
+                roleManager.Create(role);
+            }
+
+            // Create Customer role    
+            if (!roleManager.RoleExists("Customer"))
+            {
+                var role = new IdentityRole();
+                role.Name = "Customer";
+                roleManager.Create(role);
+
+                //  This method will be called after migrating to the latest version.
+
+                //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+                //  to avoid creating duplicate seed data. E.g.
+                //
+                //    context.People.AddOrUpdate(
+                //      p => p.FullName,
+                //      new Person { FullName = "Andrew Peters" },
+                //      new Person { FullName = "Brice Lambson" },
+                //      new Person { FullName = "Rowan Miller" }
+                //    );
+                //
+            }
         }
     }
 }

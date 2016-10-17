@@ -3,6 +3,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TurniptheBeetMKE.Models
 {
@@ -29,5 +31,15 @@ namespace TurniptheBeetMKE.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Address> Addresses { get; set; }
+
+        public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<Manager> Managers { get; set; }
+
+        public DbSet<MarketViewModel> MarketViewModels { get; set; }
+
+        public DbSet<Vendor> Vendors { get; set; }
     }
 }
