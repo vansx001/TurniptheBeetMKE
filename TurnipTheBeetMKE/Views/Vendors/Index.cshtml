@@ -1,0 +1,64 @@
+﻿@model IEnumerable<TurnipTheBeetMKE.Models.Vendor>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BusinessName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsSubscribed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsVendor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VendorCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasPromotion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AcceptsOnlineOrder)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusinessName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsSubscribed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsVendor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VendorCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HasPromotion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AcceptsOnlineOrder)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VendorId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.VendorId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.VendorId })
+        </td>
+    </tr>
+}
+
+</table>
