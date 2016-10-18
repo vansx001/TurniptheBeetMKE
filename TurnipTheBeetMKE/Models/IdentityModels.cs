@@ -58,5 +58,9 @@ namespace TurnipTheBeetMKE.Models
         public System.Data.Entity.DbSet<TurnipTheBeetMKE.Models.Manager> Managers { get; set; }
 
         public System.Data.Entity.DbSet<TurnipTheBeetMKE.Models.Vendor> Vendors { get; set; }
+
+        public System.Data.Entity.DbSet<TurnipTheBeetMKE.Models.FarmersMarket> FarmersMarkets { get; set; }
+
+        public System.Data.Entity.DbSet<TurnipTheBeetMKE.Models.GoogleMap> GoogleMaps { get; set; }
     }
 }

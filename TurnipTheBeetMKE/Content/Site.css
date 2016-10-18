@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*GOOGLE MAP*/
+#map_canvas{
+    position: absolute;
+    top:0; left:0; bottom:0; right:0;
+    height: 100%; 
+    max-width: 100%;
+}

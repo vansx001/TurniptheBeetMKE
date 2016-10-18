@@ -13,14 +13,14 @@ namespace TurnipTheBeetMKE.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult About() //MESSAGE FOR ABOUT PAGE
         {
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Contact() //MESSAGE FOR CONTACT PAGE
         {
             ViewBag.Message = "Your contact page.";
 

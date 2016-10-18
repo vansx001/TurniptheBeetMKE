@@ -77,15 +77,31 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.OData, Version=5.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.5.3.1\lib\net45\System.Web.Http.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -209,6 +225,8 @@
     <Compile Include="Controllers\AddressesController.cs" />
     <Compile Include="Controllers\ApplicationBaseController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\FarmersMarketsController.cs" />
+    <Compile Include="Controllers\GoogleMapsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ManagersController.cs" />
@@ -220,10 +238,32 @@
     <Compile Include="Migrations\201610180428473_initial.Designer.cs">
       <DependentUpon>201610180428473_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610180505151_added farmers market model.cs" />
+    <Compile Include="Migrations\201610180505151_added farmers market model.Designer.cs">
+      <DependentUpon>201610180505151_added farmers market model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610180506193_quick update to FM ID.cs" />
+    <Compile Include="Migrations\201610180506193_quick update to FM ID.Designer.cs">
+      <DependentUpon>201610180506193_quick update to FM ID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610180544123_updated FM model and db.cs" />
+    <Compile Include="Migrations\201610180544123_updated FM model and db.Designer.cs">
+      <DependentUpon>201610180544123_updated FM model and db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610181719292_added map.cs" />
+    <Compile Include="Migrations\201610181719292_added map.Designer.cs">
+      <DependentUpon>201610181719292_added map.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610181723472_added map controller.cs" />
+    <Compile Include="Migrations\201610181723472_added map controller.Designer.cs">
+      <DependentUpon>201610181723472_added map controller.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\FarmersMarket.cs" />
+    <Compile Include="Models\GoogleMap.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -240,6 +280,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -311,6 +352,12 @@
     <Content Include="Views\Vendors\Details.cshtml" />
     <Content Include="Views\Vendors\Edit.cshtml" />
     <Content Include="Views\Vendors\Index.cshtml" />
+    <Content Include="Views\FarmersMarkets\Index.cshtml" />
+    <Content Include="Views\GoogleMaps\Create.cshtml" />
+    <Content Include="Views\GoogleMaps\Delete.cshtml" />
+    <Content Include="Views\GoogleMaps\Details.cshtml" />
+    <Content Include="Views\GoogleMaps\Edit.cshtml" />
+    <Content Include="Views\GoogleMaps\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -327,6 +374,21 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610180428473_initial.resx">
       <DependentUpon>201610180428473_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610180505151_added farmers market model.resx">
+      <DependentUpon>201610180505151_added farmers market model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610180506193_quick update to FM ID.resx">
+      <DependentUpon>201610180506193_quick update to FM ID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610180544123_updated FM model and db.resx">
+      <DependentUpon>201610180544123_updated FM model and db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610181719292_added map.resx">
+      <DependentUpon>201610181719292_added map.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610181723472_added map controller.resx">
+      <DependentUpon>201610181723472_added map controller.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

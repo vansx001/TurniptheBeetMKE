@@ -10,7 +10,7 @@ using TurnipTheBeetMKE.Models;
 
 namespace TurnipTheBeetMKE.Controllers
 {
-    public class ManagersController : Controller
+    public class ManagersController : ApplicationBaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
