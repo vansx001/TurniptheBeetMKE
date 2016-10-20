@@ -26,5 +26,12 @@ namespace TurnipTheBeetMKE.Controllers
 
             return View();
         }
+
+        public ActionResult FAQ() //MESSAGE FOR CONTACT PAGE
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }

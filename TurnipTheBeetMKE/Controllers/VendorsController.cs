@@ -10,9 +10,10 @@ using TurnipTheBeetMKE.Models;
 
 namespace TurnipTheBeetMKE.Controllers
 {
-    public class VendorsController : ApplicationBaseController
+    public class VendorsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private string vendorCode = "0000";
 
         // GET: Vendors
         public ActionResult Index()

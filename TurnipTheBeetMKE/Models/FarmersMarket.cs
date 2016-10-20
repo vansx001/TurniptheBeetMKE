@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -16,6 +17,8 @@ namespace TurnipTheBeetMKE.Models
         public string Products { get; set; }
         public string ZipCode { get; set; }
 
-
+        [ForeignKey("GoogleMap")]
+        public int? GoogleMapId { get; set; }
+        public virtual GoogleMap GoogleMap { get; set; }
     }
 }

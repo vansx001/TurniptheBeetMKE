@@ -1,4 +1,4 @@
-﻿@model TurnipTheBeetMKE.Models.Manager
+﻿@model TurnipTheBeetMKE.Models.FarmersMarket
 
 @{
     ViewBag.Title = "Delete";
@@ -9,55 +9,55 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Manager</h4>
+    <h4>FarmersMarket</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Vendor.BusinessName)
+            @Html.DisplayNameFor(model => model.GoogleMap.CurrentLocation)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Vendor.BusinessName)
+            @Html.DisplayFor(model => model.GoogleMap.CurrentLocation)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BusinessName)
+            @Html.DisplayNameFor(model => model.marketname)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BusinessName)
+            @Html.DisplayFor(model => model.marketname)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.HasSurvey)
+            @Html.DisplayNameFor(model => model.Schedule)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.HasSurvey)
+            @Html.DisplayFor(model => model.Schedule)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.HasEvent)
+            @Html.DisplayNameFor(model => model.Address)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.HasEvent)
+            @Html.DisplayFor(model => model.Address)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.IsManager)
+            @Html.DisplayNameFor(model => model.Products)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.IsManager)
+            @Html.DisplayFor(model => model.Products)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ManagerCode)
+            @Html.DisplayNameFor(model => model.ZipCode)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ManagerCode)
+            @Html.DisplayFor(model => model.ZipCode)
         </dd>
 
     </dl>

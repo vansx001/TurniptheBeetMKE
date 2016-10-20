@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
@@ -10,14 +11,16 @@ using TurnipTheBeetMKE.Models;
 
 namespace TurnipTheBeetMKE.Controllers
 {
-    public class ManagersController : ApplicationBaseController
+    public class ManagersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private string managerCode = "9999";
 
         // GET: Managers
         public ActionResult Index()
         {
-            return View(db.Managers.ToList());
+            var managers = db.Managers.Include(m => m.Vendor);
+            return View(managers.ToList());
         }
 
         // GET: Managers/Details/5
@@ -38,6 +41,7 @@ namespace TurnipTheBeetMKE.Controllers
         // GET: Managers/Create
         public ActionResult Create()
         {
+            ViewBag.VendorId = new SelectList(db.Vendors, "VendorId", "BusinessName");
             return View();
         }
 
@@ -46,15 +50,17 @@ namespace TurnipTheBeetMKE.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ManagerId,BusinessName,HasSurvey,HasEvent,IsManager,ManagerCode")] Manager manager)
+        public ActionResult Create([Bind(Include = "ManagerId,BusinessName,HasSurvey,HasEvent,IsManager,ManagerCode,VendorId")] Manager manager)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && manager.ManagerCode == managerCode)
             {
                 db.Managers.Add(manager);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                db.Managers.Add(manager);
+                return RedirectToAction("Create", "Addresses");
             }
-
+            
+            ViewBag.VendorId = new SelectList(db.Vendors, "VendorId", "BusinessName", manager.VendorId);
             return View(manager);
         }
 
@@ -70,6 +76,7 @@ namespace TurnipTheBeetMKE.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.VendorId = new SelectList(db.Vendors, "VendorId", "BusinessName", manager.VendorId);
             return View(manager);
         }
 
@@ -78,7 +85,7 @@ namespace TurnipTheBeetMKE.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ManagerId,BusinessName,HasSurvey,HasEvent,IsManager,ManagerCode")] Manager manager)
+        public ActionResult Edit([Bind(Include = "ManagerId,BusinessName,HasSurvey,HasEvent,IsManager,ManagerCode,VendorId")] Manager manager)
         {
             if (ModelState.IsValid)
             {
@@ -86,6 +93,7 @@ namespace TurnipTheBeetMKE.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.VendorId = new SelectList(db.Vendors, "VendorId", "BusinessName", manager.VendorId);
             return View(manager);
         }
 
