@@ -18,7 +18,8 @@ namespace TurnipTheBeetMKE.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         private ApplicationDbContext context;
-        
+        private string vendorCode = "0000";
+        private string managerCode = "9999";
 
         public AccountController()
         {
@@ -177,7 +178,7 @@ namespace TurnipTheBeetMKE.Controllers
                         return RedirectToAction("Create", "Managers");
                     }
                     else
-                        return RedirectToAction("Create", "Addresses");
+                        return RedirectToAction("Create", "Customers");
                 }
 
                 // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
