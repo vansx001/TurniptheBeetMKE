@@ -13,6 +13,7 @@ namespace TurnipTheBeetMKE.Controllers
     public class ManagersController : ApplicationBaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private string managerCode = "9999";
 
         // GET: Managers
         public ActionResult Index()
@@ -46,13 +47,13 @@ namespace TurnipTheBeetMKE.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ManagerId,BusinessName,HasSurvey,HasEvent,IsManager,ManagerCode")] Manager manager)
+        public ActionResult Create([Bind(Include = "ManagerId,BusinessName,HasSurvey,HasEvent,IsManager,ManagerCode,VendorId")] Manager manager)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && manager.ManagerCode == managerCode)
             {
                 db.Managers.Add(manager);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "Addresses");
             }
 
             return View(manager);
@@ -78,7 +79,7 @@ namespace TurnipTheBeetMKE.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ManagerId,BusinessName,HasSurvey,HasEvent,IsManager,ManagerCode")] Manager manager)
+        public ActionResult Edit([Bind(Include = "ManagerId,BusinessName,HasSurvey,HasEvent,IsManager,ManagerCode,VendorId")] Manager manager)
         {
             if (ModelState.IsValid)
             {

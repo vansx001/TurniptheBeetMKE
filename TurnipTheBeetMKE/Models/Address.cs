@@ -13,9 +13,6 @@ namespace TurnipTheBeetMKE.Models
         [Display(Name = "Address Id")]
         public int AddressId { get; set; }
 
-        [Display(Name = "Business Name")]
-        public string BusinessName { get; set; }
-
         [Display(Name = "Address")]
         public string Street { get; set; }
 

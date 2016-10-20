@@ -13,6 +13,7 @@ namespace TurnipTheBeetMKE.Controllers
     public class VendorsController : ApplicationBaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private string vendorCode = "0000";
 
         // GET: Vendors
         public ActionResult Index()
@@ -46,13 +47,13 @@ namespace TurnipTheBeetMKE.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "VendorId,BusinessName,IsSubscribed,IsVendor,VendorCode,HasPromotion,AcceptsOnlineOrder")] Vendor vendor)
+        public ActionResult Create([Bind(Include = "VendorId,BusinessName,IsSubscribed,IsVendor,VendorCode,HasPromotion,AcceptsOnlineOrder,ManagerId")] Vendor vendor)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && vendor.VendorCode == vendorCode)
             {
                 db.Vendors.Add(vendor);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "Addresses");
             }
 
             return View(vendor);
@@ -78,7 +79,7 @@ namespace TurnipTheBeetMKE.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "VendorId,BusinessName,IsSubscribed,IsVendor,VendorCode,HasPromotion,AcceptsOnlineOrder")] Vendor vendor)
+        public ActionResult Edit([Bind(Include = "VendorId,BusinessName,IsSubscribed,IsVendor,VendorCode,HasPromotion,AcceptsOnlineOrder,ManagerId")] Vendor vendor)
         {
             if (ModelState.IsValid)
             {

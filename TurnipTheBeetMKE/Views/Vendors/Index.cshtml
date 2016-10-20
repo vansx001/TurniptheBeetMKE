@@ -30,6 +30,9 @@
         <th>
             @Html.DisplayNameFor(model => model.AcceptsOnlineOrder)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManagerId)
+        </th>
         <th></th>
     </tr>
 
@@ -52,6 +55,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.AcceptsOnlineOrder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManagerId)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.VendorId }) |

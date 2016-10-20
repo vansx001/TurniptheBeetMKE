@@ -11,7 +11,7 @@ using TurnipTheBeetMKE.Models;
 
 namespace TurnipTheBeetMKE.Controllers
 {
-    public class GoogleMapsController : Controller
+    public class GoogleMapsController : ApplicationBaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 

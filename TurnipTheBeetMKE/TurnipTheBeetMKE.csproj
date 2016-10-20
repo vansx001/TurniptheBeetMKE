@@ -258,6 +258,14 @@
     <Compile Include="Migrations\201610181723472_added map controller.Designer.cs">
       <DependentUpon>201610181723472_added map controller.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610201854533_update db.cs" />
+    <Compile Include="Migrations\201610201854533_update db.Designer.cs">
+      <DependentUpon>201610201854533_update db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610201918215_updated db 2.cs" />
+    <Compile Include="Migrations\201610201918215_updated db 2.Designer.cs">
+      <DependentUpon>201610201918215_updated db 2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -280,7 +288,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
-    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -342,22 +349,26 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
-    <Content Include="Views\Managers\Create.cshtml" />
-    <Content Include="Views\Managers\Delete.cshtml" />
-    <Content Include="Views\Managers\Details.cshtml" />
-    <Content Include="Views\Managers\Edit.cshtml" />
-    <Content Include="Views\Managers\Index.cshtml" />
-    <Content Include="Views\Vendors\Create.cshtml" />
-    <Content Include="Views\Vendors\Delete.cshtml" />
-    <Content Include="Views\Vendors\Details.cshtml" />
-    <Content Include="Views\Vendors\Edit.cshtml" />
-    <Content Include="Views\Vendors\Index.cshtml" />
-    <Content Include="Views\FarmersMarkets\Index.cshtml" />
     <Content Include="Views\GoogleMaps\Create.cshtml" />
     <Content Include="Views\GoogleMaps\Delete.cshtml" />
     <Content Include="Views\GoogleMaps\Details.cshtml" />
     <Content Include="Views\GoogleMaps\Edit.cshtml" />
     <Content Include="Views\GoogleMaps\Index.cshtml" />
+    <Content Include="Views\Vendors\Create.cshtml" />
+    <Content Include="Views\Vendors\Delete.cshtml" />
+    <Content Include="Views\Vendors\Details.cshtml" />
+    <Content Include="Views\Vendors\Edit.cshtml" />
+    <Content Include="Views\Vendors\Index.cshtml" />
+    <Content Include="Views\Managers\Create.cshtml" />
+    <Content Include="Views\Managers\Delete.cshtml" />
+    <Content Include="Views\Managers\Details.cshtml" />
+    <Content Include="Views\Managers\Edit.cshtml" />
+    <Content Include="Views\Managers\Index.cshtml" />
+    <Content Include="Views\FarmersMarkets\Create.cshtml" />
+    <Content Include="Views\FarmersMarkets\Delete.cshtml" />
+    <Content Include="Views\FarmersMarkets\Details.cshtml" />
+    <Content Include="Views\FarmersMarkets\Edit.cshtml" />
+    <Content Include="Views\FarmersMarkets\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -389,6 +400,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610181723472_added map controller.resx">
       <DependentUpon>201610181723472_added map controller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610201854533_update db.resx">
+      <DependentUpon>201610201854533_update db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610201918215_updated db 2.resx">
+      <DependentUpon>201610201918215_updated db 2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -46,7 +46,7 @@ namespace TurnipTheBeetMKE.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AddressId,BusinessName,Street,ApartmentNumber,City,State,ZipCode")] Address address)
+        public ActionResult Create([Bind(Include = "AddressId,Street,ApartmentNumber,City,State,ZipCode")] Address address)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace TurnipTheBeetMKE.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AddressId,BusinessName,Street,ApartmentNumber,City,State,ZipCode")] Address address)
+        public ActionResult Edit([Bind(Include = "AddressId,Street,ApartmentNumber,City,State,ZipCode")] Address address)
         {
             if (ModelState.IsValid)
             {
