@@ -266,6 +266,10 @@
     <Compile Include="Migrations\201610201918215_updated db 2.Designer.cs">
       <DependentUpon>201610201918215_updated db 2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610210306099_test3.cs" />
+    <Compile Include="Migrations\201610210306099_test3.Designer.cs">
+      <DependentUpon>201610210306099_test3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -301,6 +305,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\map.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -406,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610201918215_updated db 2.resx">
       <DependentUpon>201610201918215_updated db 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610210306099_test3.resx">
+      <DependentUpon>201610210306099_test3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
