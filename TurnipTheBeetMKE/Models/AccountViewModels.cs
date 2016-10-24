@@ -93,7 +93,7 @@ namespace TurnipTheBeetMKE.Models
         public string ConfirmPassword { get; set; }
 
         [Required]
-        [Display(Name = "UserRoles")]
+        [Display(Name = "I am a:")]
         public string UserRoles { get; set; }
     }
 

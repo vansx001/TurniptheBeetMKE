@@ -270,6 +270,14 @@
     <Compile Include="Migrations\201610210306099_test3.Designer.cs">
       <DependentUpon>201610210306099_test3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610232350168_test.cs" />
+    <Compile Include="Migrations\201610232350168_test.Designer.cs">
+      <DependentUpon>201610232350168_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610240026189_testing.cs" />
+    <Compile Include="Migrations\201610240026189_testing.Designer.cs">
+      <DependentUpon>201610240026189_testing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -301,6 +309,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.mask.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -414,6 +423,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610210306099_test3.resx">
       <DependentUpon>201610210306099_test3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610232350168_test.resx">
+      <DependentUpon>201610232350168_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610240026189_testing.resx">
+      <DependentUpon>201610240026189_testing.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

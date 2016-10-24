@@ -1,32 +1,11 @@
 ﻿@model IEnumerable<TurnipTheBeetMKE.Models.FarmersMarket>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP1sKz5CaVinCr1WmJ1M3C0T-ZFXI47PQ"></script>
-<script src="~/Scripts/map.js"></script>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="marketmap">
-    <div id="map-canvas"></div>
-</div>
-
-
-<div class="float_none">
-    <h2>Find a Farmers Market</h2>
-    <form method="get" id="searchZip">
-        <div class="zipSearch">
-            <input id="textZip" type="text" name="zip" placeholder="enter zip code" autofocus />
-            <input type="submit" class="btn" value="Search" />
-        </div>
-    </form>
-</div>
-<div id="results"></div>
-
-
-@*<p>
+<p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
@@ -80,4 +59,4 @@
     </tr>
 }
 
-</table>*@
+</table>
