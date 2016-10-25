@@ -8,6 +8,8 @@ namespace TurnipTheBeetMKE.Models
 {
     public class FarmersMarketViewModel
     {
+        public FarmersMarket farmersMarket { get; set; }
+        public int FarmersMarketId { get; set; }
         [Display(Name = "Market Name")]
         public string marketname { get; set; }
         public string Schedule { get; set; }

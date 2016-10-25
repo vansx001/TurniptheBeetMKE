@@ -19,6 +19,7 @@ namespace TurnipTheBeetMKE.Controllers
         {
             var farmersMarkets = db.FarmersMarkets.Include(f => f.GoogleMap).Select(f => new FarmersMarketViewModel()
             {
+                FarmersMarketId = f.FarmersMarketId,
                 marketname = f.marketname,
                 Schedule = f.Schedule,
                 Address = f.Address,
