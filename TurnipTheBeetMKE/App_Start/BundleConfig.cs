@@ -23,13 +23,10 @@ namespace TurnipTheBeetMKE
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
-                      "~/Scripts/skroller.min.js",
-                      "~/Scripts/smooth-scroll.min.js",
                       "~/Scripts/app.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/pe-icon-7-stroke.min.css",
                       "~/Content/site.css"));
         }
     }

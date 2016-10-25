@@ -3,118 +3,73 @@
 }
 @if (User.Identity.IsAuthenticated)
 {
-<div class="jumbotron">
-    <h1>Started from the garden now we here.</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <div class="jumbotron">
+        <h1>Started from the garden <br />now we're here</h1>
+        <p class="lead">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            Aenean commodo ligula eget dolor.
+        </p>
+        <p><a href="http://localhost:4786/Home/About" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Manage Your Account</h4>
+            <p>Bacon ipsum dolor amet ham hock picanha beef, prosciutto capicola.</p>
+            <button class="btn btn-primary btn-lg" onclick="location.href='@Url.Action("Index", "Manage")';return false;">
+                Manage
+            </button><br />
+        </div>
+        <div class="col-md-4">
+            <h4>Find a farmers market</h4>
+            <p>Filet mignon pancetta beef pork. Landjaeger pork andouille tongue meatloaf capicola.</p>
+            <button class="btn btn-primary btn-lg" onclick="location.href='@Url.Action("Index", "GoogleMaps")';return false;">
+                Locate
+            </button><br />
+        </div>
+        <div class="col-md-4">
+            <h4>News and Updates</h4>
+            <p>YLorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+            <p><a class="btn btn-primary btn-lg" href="#">Learn more &raquo;</a></p>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
 }
-else {
-<h1>Welcome!</h1>
+else
+{
+    <div class="jumbotron">
+        <h1>Started from the garden <br />now we're here</h1>
+        <p class="lead">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            Aenean commodo ligula eget dolor.
+
+        </p>
+        <p>
+            <a href="http://localhost:4786/Home/About" class="btn btn-primary btn-lg">Learn more &raquo;</a>&nbsp;&nbsp;
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h4>Register for a New Account</h4>
+            <p>Bacon ipsum dolor amet ham hock picanha beef, prosciutto capicola.</p>
+            <p><button class="btn btn-primary btn-lg" onclick="location.href='@Url.Action("Register", "Account")';return false;">
+            Sign up
+            </button><br /></p>
+        </div>
+        <div class="col-md-4">
+            <h4>Find a Farmers Market</h4>
+            <p>Filet mignon pancetta beef pork. Landjaeger pork andouille tongue meatloaf capicola.</p>
+            <p>
+                <button class="btn btn-primary btn-lg" onclick="location.href='@Url.Action("Create", "GoogleMaps")';return false;">
+                    Locate
+                </button><br />
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h4>News and Updates</h4>
+            <p>YLorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+            <p><a class="btn btn-primary btn-lg" href="#">Learn more &raquo;</a></p>
+        </div>
+    </div>
+
 }
