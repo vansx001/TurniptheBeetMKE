@@ -13,7 +13,7 @@ namespace TurnipTheBeetMKE.Controllers
     public class ManagersController : ApplicationBaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        private string managerCode = "9999";
+        //private string managerCode = "9999";
 
         // GET: Managers
         public ActionResult Index()
@@ -49,7 +49,7 @@ namespace TurnipTheBeetMKE.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ManagerId,BusinessName,HasSurvey,HasEvent,IsManager,ManagerCode,VendorId")] Manager manager)
         {
-            if (ModelState.IsValid && manager.ManagerCode == managerCode)
+            if (ModelState.IsValid)
             {
                 db.Managers.Add(manager);
                 db.SaveChanges();

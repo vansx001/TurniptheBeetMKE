@@ -283,10 +283,12 @@
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\FarmersMarket.cs" />
+    <Compile Include="Models\FarmersMarketViewModel.cs" />
     <Compile Include="Models\GoogleMap.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Models\Vendor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -294,12 +296,15 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\logoTTB2.png" />
+    <Content Include="Content\pe-icon-7-stroke.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -318,6 +323,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\skrollr.min.js" />
+    <Content Include="Scripts\smooth-scroll.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

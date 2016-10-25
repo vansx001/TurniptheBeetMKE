@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using TurnipTheBeetMKE.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace TurnipTheBeetMKE.Controllers
 {
@@ -80,10 +81,24 @@ namespace TurnipTheBeetMKE.Controllers
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+           
+
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    var user = UserManager.FindByEmail(model.Email);
+                    var userRoles = UserManager.GetRoles(user.Id);
+                    if (userRoles.Contains("Vendor"))
+                    {
+                        return RedirectToAction("Create", "Vendors");
+                    }
+                    else if (userRoles.Contains("Manager"))
+                    {
+                        return RedirectToAction("Create", "Managers");
+                    }
+                    else
+                        return RedirectToAction("Create", "Addresses");
+                    //return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -157,6 +172,7 @@ namespace TurnipTheBeetMKE.Controllers
         {
             if (ModelState.IsValid)
             {
+               
                 var user = new ApplicationUser
                 {
                     UserName = model.Email,
@@ -164,7 +180,10 @@ namespace TurnipTheBeetMKE.Controllers
                     FirstName = model.FirstName,
                     LastName = model.LastName
                 };
+
+                
                 var result = await UserManager.CreateAsync(user, model.Password);
+                UserManager.AddToRole(user.Id, model.UserRoles);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);

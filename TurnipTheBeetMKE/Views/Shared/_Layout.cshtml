@@ -10,33 +10,60 @@
 </head>
 
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Turnip the Beet MKE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+    <a id="top"></a>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">*@
+        <div class="nav-container">
+            <nav class="overlay-nav">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Turnip the Beet MKE", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </nav>
         </div>
-    </div>
+    <div class="bottom-border"></div>
+    @*</div>*@
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
+
+
+
+        <div class="row">
+            <div class="footer">
+                <div class="col-sm-12">
+                </div>
+                <div class="col-sm-5">
+                    <img alt="Logo" class="logo" src="~/content/images/logottb2.png" />
+                    <span class="text-white" style="bottom: 0px;display:inline;">&copy; @DateTime.Now.Year - Turnip the Beet MKE</span>
+                </div>
+
+                <div class="col-sm-9 text-right">
+                    <ul class="menu">
+                        <li><a href="#">Terms of service</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a class="inner-link back-to-top" href="#top">Back To Top&nbsp;<i class="icon fa fa-chevron-circle-up" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!--end of row-->
+    </div><!--end of container-->
+        @*<hr />*@
+        @*<footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+        </footer>*@
+    @*</div>*@
 
 
     @Scripts.Render("~/bundles/bootstrap")

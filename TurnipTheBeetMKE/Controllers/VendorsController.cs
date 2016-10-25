@@ -13,7 +13,7 @@ namespace TurnipTheBeetMKE.Controllers
     public class VendorsController : ApplicationBaseController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        private string vendorCode = "0000";
+        //private string vendorCode = "0000";
 
         // GET: Vendors
         public ActionResult Index()
@@ -49,7 +49,7 @@ namespace TurnipTheBeetMKE.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "VendorId,BusinessName,IsSubscribed,IsVendor,VendorCode,HasPromotion,AcceptsOnlineOrder,ManagerId")] Vendor vendor)
         {
-            if (ModelState.IsValid && vendor.VendorCode == vendorCode)
+            if (ModelState.IsValid)
             {
                 db.Vendors.Add(vendor);
                 db.SaveChanges();

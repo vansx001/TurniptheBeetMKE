@@ -64,8 +64,10 @@ namespace TurnipTheBeetMKE.Controllers
                 : "";
 
             var userId = User.Identity.GetUserId();
-            var model = new IndexViewModel
+            var user = UserManager.FindById(userId);
+            var model = new IndexViewModel()
             {
+                CurrentUser = new UserViewModel() { FirstName = user.FirstName, LastName = user.LastName},
                 HasPassword = HasPassword(),
                 PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
                 TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),

@@ -1,12 +1,18 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    color: #333333;
+    font-size: 14px;
+    line-height: 24px;
+    background: #eee;
+    -moz-osx-font-smoothing: grayscale;
 }
-
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 124px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,6 +27,13 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+
+.icon {
+    font-size: 60px;
+    color:#000;
+    margin-bottom: 12px;
 }
 
 /*GOOGLE MAP*/
@@ -41,4 +54,289 @@ textarea {
     width: 100%;
     position: relative;
     margin-top:460px;
+}
+nav .container {
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+
+
+.jumbotron h1, .jumbotron .h1 {
+    font-size: 59px;
+    padding: 124px 10px 10px 10px;
+}
+
+.nav-container,
+nav {
+    max-width: 1600px;
+    margin: 0px auto;
+
+}
+
+.overlay-nav {
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+    width: 100%;
+    padding-top: 24px;
+    line-height: 1;
+    background: none;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+.show-content {
+    opacity: 1 !important;
+}
+
+.menu {
+    display: inline-block;
+    text-align: left;
+    line-height: 1;
+    list-style:none;
+}
+.menu li {
+    float: left;
+    margin-right: 32px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    position: relative;
+    top: 4px;
+}
+.menu li:last-child {
+    margin-right: 0px;
+}
+.menu li:nth-las-child(2) {
+    margin-right: 12px;
+}
+.menu li a {
+    color: #fff;
+    display: inline-block;
+    padding-bottom: 24px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+}
+.menu li a:hover {
+    border-bottom: 2px solid #fff;
+}
+
+.logo {
+    width:auto;
+    height: 200px;
+}
+.sticky-nav {
+    background: rgba(255, 255, 255, 0.9);
+}
+.sticky-nav .menu li a {
+    color: #333333;
+}
+.sticky-nav .bottom-border {
+    display: none;
+}
+.sticky-nav .menu li a:hover {
+    border-color: rgba(0, 0, 0, 0);
+}
+.sticky-nav .sidebar-menu-toggle,
+.sticky-nav .mobile-menu-toggle {
+    color: #333333;
+}
+.sticky-nav .nav-dropdown {
+    background: rgba(255, 255, 255, 0.9);
+}
+.sticky-nav .has-dropdown:before {
+    color: #333333;
+}
+
+.text-white {
+    color: #fff;
+}
+nav .text-right {
+    position: relative;
+}
+
+@media all and (max-width: 768px) {
+    nav {
+        max-height: 67px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.9) !important;
+    }
+    nav .menu li {
+        float: none;
+        margin-bottom: 24px;
+    }
+    nav .menu li a {
+        color: #333333 !important;
+        padding-bottom: 0px;
+    }
+    nav .logo {
+        max-width: 90px;
+        top: -2px;
+    }
+    nav .logo-dark {
+        opacity: 1 !important;
+    }
+    nav .logo-light {
+        opacity: 0 !important;
+    }
+    nav .menu {
+        width: 100%;
+        display: block;
+        margin-top: 67px;
+        margin-right: 0px;
+    }
+    nav .social-link {
+        float: left !important;
+    }
+    .sidebar-menu-toggle {
+        display: none;
+    }
+    .mobile-menu-toggle {
+        display: block;
+        position: fixed;
+        top: 17px;
+        right: 24px;
+        color: #333333 !important;
+    }
+    .open-menu {
+        max-height: 800px !important;
+    }
+    .nav-dropdown {
+        position: relative;
+        display: none;
+    }
+    .has-dropdown:hover .nav-dropdown {
+        display: block;
+    }
+    .has-dropdown:before {
+        color: #333333;
+    }
+}
+
+.bottom-border {
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.3);
+}
+/*!
+// Footer
+// --------------------------------------------------*/
+.footer {
+position: sticky;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+.footer .menu {
+    overflow: visible;
+}
+.footer .menu li {
+    top: 0px;
+}
+.footer .menu li a {
+    padding-bottom: 0px;
+}
+.footer .menu li .btn {
+    min-width: 0px;
+    padding: 10px 18px;
+    font-size: 14px;
+}
+.footer .menu li a {
+    display: inline-block;
+    border: none;
+}
+.footer .menu li a:hover {
+    border: none;
+}
+.footer .back-to-top {
+    padding-right: 42px;
+}
+.footer .menu li a i {
+    font-size: 36px;
+    position: absolute;
+    right: 0px;
+    top: -12px;
+}
+@media all and (max-width: 767px) {
+    .footer .text-right {
+        text-align: left !important;
+    }
+    .footer .menu {
+        margin-top: 24px;
+    }
+    .footer .menu li {
+        float: none;
+        margin-bottom: 12px;
+    }
+}
+footer.classic {
+    padding: 72px 0px 36px 0px;
+    background: #f5f5f5;
+}
+footer.classic .menu li {
+    float: none;
+    margin-bottom: 12px;
+}
+footer.classic .menu li a {
+    color: #333333;
+    padding-bottom: 0px;
+    font-weight: 600;
+}
+footer.classic span.lead {
+    display: inline-block;
+    margin-bottom: 12px;
+}
+footer.short {
+    background: #333333;
+    color: #fff;
+    padding: 72px 0px;
+}
+
+@media all and (max-width: 767px) {
+    footer.classic div {
+        margin-bottom: 18px;
+    }
+}
+.contact-methods li {
+    margin-bottom: 12px;
+}
+.contact-methods li:last-child {
+    margin-bottom: 0px;
+}
+.contact-methods i {
+    font-size: 36px;
+    color: #333333;
+}
+.contact-methods span {
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+    left: 8px;
+    font-size: 16px;
+}
+footer.classic .social-profiles {
+    margin-top: 36px;
+}
+.social-profiles {
+    display: inline-block;
+    overflow: hidden;
+}
+.social-profiles li {
+    float: left;
+    margin-right: 36px;
+}
+.social-profiles li:last-child {
+    margin-right: 0px;
+}
+.social-profiles li a {
+    color: #333333;
+    font-size: 20px;
 }

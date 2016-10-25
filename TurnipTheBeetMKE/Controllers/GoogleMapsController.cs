@@ -42,6 +42,37 @@ namespace TurnipTheBeetMKE.Controllers
             return View();
         }
 
+        [Serializable]
+        public class NameOfMarket
+        {
+            public string MarketName { get; set; }
+        }
+        [HttpPost]
+        public void SaveMarketName(FarmersMarketViewModel market)
+        {
+            try
+            {
+                FarmersMarket fm = new FarmersMarket()
+                {
+                    marketname = market.marketname,
+                    Schedule = market.Schedule,
+                    Address = market.Address,
+                    Products = market.Products
+                };
+
+                db.FarmersMarkets.Add(fm);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
+
+            RedirectToAction("Index");
+        }
+
         // POST: GoogleMaps/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.

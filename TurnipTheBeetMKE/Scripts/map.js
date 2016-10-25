@@ -1,4 +1,20 @@
+function saveNameOfMarket(name, schedule, address, products) {
+	$.ajax({
+		type: "POST",
+		url: "../GoogleMaps/SaveMarketName",
+		dataType: "json",
+		contentType: "application/json",
+		data: JSON.stringify({
+			'marketname': name,
+			'Schedule': schedule,
+			'Address': address,
+			'Products': products
+		})
+	});
+}
+
 $(document).ready(function () {
+	var self = this;
 	$('form').submit(function (event) {
 		event.preventDefault();
 		searchRequest();
@@ -90,43 +106,53 @@ $(document).ready(function () {
 							url: "http://search.ams.usda.gov/farmersmarkets/v1/data.svc/mktDetail?id=" + v,
 							dataType: 'jsonp',
 							success: function (data) {
-								for (var key in data) {
-									if (!data.hasOwnProperty(key) && data === undefined) {
-										continue;
-									}
-									var results = data[key];
-									var GoogleLink = results.GoogleLink;
-									var latLong = decodeURIComponent(GoogleLink.substring(GoogleLink.indexOf("=") + 1, GoogleLink.lastIndexOf("(")));
-									var split = latLong.split(',');
-									var latitude = parseFloat(split[0]);
-									var longitude = parseFloat(split[1]);
-									myLatlng = new google.maps.LatLng(latitude, longitude);
-									allMarkers = new google.maps.Marker({
-										position: myLatlng,
-										map: map,
-										icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
-										title: marketName[counter],
-										html: '<div id="results" class="markerPop">' + '<h1>' + marketName[counter].substring(4) + '</h1>' +
-											'<h3>' + results.Address + '</h3>' + '<p>' + results.Products.split(';') + '</p>' +
-											'<p>' + results.Schedule + '</p>' + '</div>'
-									});
-									allLatlng.push(myLatlng);
-									marker.push(allMarkers);
-									counter++;
-								};
-								google.maps.event.addListener(allMarkers, 'click', function () {
-									infowindow.setContent(this.html);
-									infowindow.open(map, this);
-								});
-								var bounds = new google.maps.LatLngBounds();
-								for (var i = 0, LtLgLen = allLatlng.length; i < LtLgLen; i++) {
-									bounds.extend(allLatlng[i]);
-								}
-								map.fitBounds(bounds);
+								doSomething(data);
 							}
 
 
 						});
+
+						function doSomething(data) {
+							for (var key in data) {
+								if (!data.hasOwnProperty(key) && data === undefined) {
+									continue;
+								}
+								var results = data[key];
+								var GoogleLink = results.GoogleLink;
+								var latLong = decodeURIComponent(GoogleLink.substring(GoogleLink.indexOf("=") + 1, GoogleLink.lastIndexOf("(")));
+								var split = latLong.split(',');
+								var latitude = parseFloat(split[0]);
+								var longitude = parseFloat(split[1]);
+								var foundMarket = marketName[counter].substring(4);
+								myLatlng = new google.maps.LatLng(latitude, longitude);
+								allMarkers = new google.maps.Marker({
+
+									position: myLatlng,
+									map: map,
+									icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+									title: marketName[counter],
+									html: '<div id="results" class="markerPop">' + '<h1>' + foundMarket + '</h1>' +
+										'<h3>' + results.Address + '</h3>' + '<p>' + results.Products.split(';') + '</p>' +
+										'<p>' + results.Schedule + '</p>' + '</div>' +
+										'<button onclick="saveNameOfMarket(\''+ foundMarket + '\',\''+ 
+										results.Schedule + '\',\''+ results.Address +'\',\''+ results.Products + '\')"> Favorite' + '</button>'
+								});
+								allLatlng.push(myLatlng);
+								marker.push(allMarkers);
+								counter++;
+							};
+							google.maps.event.addListener(allMarkers, 'click', function () {
+								infowindow.setContent(this.html);
+								infowindow.open(map, this);
+							});
+							var bounds = new google.maps.LatLngBounds();
+							for (var i = 0, LtLgLen = allLatlng.length; i < LtLgLen; i++) {
+								bounds.extend(allLatlng[i]);
+							}
+							map.fitBounds(bounds);
+							
+						}
+					
 					});
 				}
 			});
@@ -134,5 +160,6 @@ $(document).ready(function () {
 			//initMap();
 		});
 	}
+
 });
 
