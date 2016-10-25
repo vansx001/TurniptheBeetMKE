@@ -88,16 +88,17 @@ namespace TurnipTheBeetMKE.Controllers
                 case SignInStatus.Success:
                     var user = UserManager.FindByEmail(model.Email);
                     var userRoles = UserManager.GetRoles(user.Id);
+
                     if (userRoles.Contains("Vendor"))
                     {
-                        return RedirectToAction("Create", "Vendors");
+                        return RedirectToAction("Index", "Manage");
                     }
                     else if (userRoles.Contains("Manager"))
                     {
-                        return RedirectToAction("Create", "Managers");
+                        return RedirectToAction("Index", "Manage");
                     }
                     else
-                        return RedirectToAction("Create", "Addresses");
+                        return RedirectToAction("Index", "Manage");
                     //return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -190,14 +191,14 @@ namespace TurnipTheBeetMKE.Controllers
 
                     if (model.UserRoles == "Vendor")
                     {
-                        return RedirectToAction("Create", "Vendors");
+                        return RedirectToAction("Index", "Manage");
                     }
                     else if (model.UserRoles == "Manager")
                     {
-                        return RedirectToAction("Create", "Managers");
+                        return RedirectToAction("Index", "Manage");
                     }
-                    else
-                        return RedirectToAction("Create", "Addresses");
+                    else if (model.UserRoles == "Customer")
+                        return RedirectToAction("Index", "Manage");
                 }
 
                 // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771

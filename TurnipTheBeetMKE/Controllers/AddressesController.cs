@@ -50,9 +50,25 @@ namespace TurnipTheBeetMKE.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Addresses.Add(address);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (User.IsInRole("Vendor"))
+                {
+                    db.Addresses.Add(address);
+                    db.SaveChanges();
+                    return RedirectToAction("Index", "Manage");
+                }
+                else if (User.IsInRole("Manager"))
+                {
+                    db.Addresses.Add(address);
+                    db.SaveChanges();
+                    return RedirectToAction("Index", "Manage");
+                }
+                else if (User.IsInRole("Customer"))
+                {
+                    db.Addresses.Add(address);
+                    db.SaveChanges();
+                    return RedirectToAction("Index", "Manage");
+                }
+
             }
 
             return View(address);

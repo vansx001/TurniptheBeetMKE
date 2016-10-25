@@ -17,7 +17,13 @@ namespace TurnipTheBeetMKE.Controllers
         // GET: FarmersMarkets
         public ActionResult Index()
         {
-            var farmersMarkets = db.FarmersMarkets.Include(f => f.GoogleMap);
+            var farmersMarkets = db.FarmersMarkets.Include(f => f.GoogleMap).Select(f => new FarmersMarketViewModel()
+            {
+                marketname = f.marketname,
+                Schedule = f.Schedule,
+                Address = f.Address,
+                Products = f.Products
+            });
             return View(farmersMarkets.ToList());
         }
 

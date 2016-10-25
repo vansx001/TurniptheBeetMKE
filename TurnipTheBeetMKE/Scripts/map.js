@@ -129,7 +129,7 @@ $(document).ready(function () {
 
 									position: myLatlng,
 									map: map,
-									icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+									icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
 									title: marketName[counter],
 									html: '<div id="results" class="markerPop">' + '<h1>' + foundMarket + '</h1>' +
 										'<h3>' + results.Address + '</h3>' + '<p>' + results.Products.split(';') + '</p>' +
