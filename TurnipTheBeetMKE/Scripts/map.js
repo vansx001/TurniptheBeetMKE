@@ -131,11 +131,11 @@ $(document).ready(function () {
 									map: map,
 									icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
 									title: marketName[counter],
-									html: '<div id="results" class="markerPop">' + '<h1>' + foundMarket + '</h1>' +
-										'<h3>' + results.Address + '</h3>' + '<p>' + results.Products.split(';') + '</p>' +
+									html: '<div style="background-color:#fff;" id="results" class="markerPop">' + '<h1 style="font-size:30px;">' + foundMarket + '</h1>' +
+										'<h3 style="font-size:20px;">' + results.Address + '</h3>' + '<p>' + results.Products.split(';') + '</p>' +
 										'<p>' + results.Schedule + '</p>' + '</div>' +
-										'<button onclick="saveNameOfMarket(\''+ foundMarket + '\',\''+ 
-										results.Schedule + '\',\''+ results.Address +'\',\''+ results.Products + '\')"> Favorite' + '</button>'
+										'<button class="btn btn-primary" onclick="saveNameOfMarket(\'' + foundMarket + '\',\'' +
+										results.Schedule + '\',\'' + results.Address + '\',\'' + results.Products + '\')"> <i class="fa fa-heart" aria-hidden="true"></i> &nbsp;Favorite' + '</button>'
 								});
 								allLatlng.push(myLatlng);
 								marker.push(allMarkers);

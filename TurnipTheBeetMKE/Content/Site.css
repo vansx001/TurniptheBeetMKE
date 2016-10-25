@@ -29,11 +29,23 @@ textarea {
 	max-width: 280px;
 }
 
+#results {
+	width:400px;
+	height:auto;
+}
+
 .icon {
 	font-size: 60px;
 	color:#000;
 	margin-bottom: 12px;
 }
+
+button {
+	color: #ffffff;
+	background-color: #9eafa9;
+	border-color: transparent;
+}
+
 .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
 	color: #ffffff;
 	background-color: #404a27;
